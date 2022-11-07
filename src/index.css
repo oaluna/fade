@@ -1,14 +1,15 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -26,7 +27,6 @@ input {
 ::-webkit-scrollbar {
   display: none;
 }
-
 
 .login__container {
   background-color: #f0f2f5;
@@ -58,7 +58,7 @@ input {
   margin-top: -1.125rem;
 }
 
-.login__welcome p { 
+.login__welcome p {
   font-size: 1.5rem;
   padding-left: 2.125rem;
 }
@@ -75,7 +75,7 @@ input {
 }
 
 .login__form input {
-  border: 1px solid #E5E7EB;
+  border: 1px solid #e5e7eb;
   font-size: 1rem;
   margin-bottom: 0.75rem;
   padding: 0.875rem 1rem;
@@ -83,7 +83,7 @@ input {
 }
 
 .login__submit-btn {
-  background-color:#000000;
+  background-color: #000000;
   border: 0;
   color: #fff;
   font-size: 1rem;
@@ -99,8 +99,8 @@ input {
 }
 
 .login__forgot-password {
-  border-bottom: 1px solid #E5E7EB;
-  color: #2563EB;
+  border-bottom: 1px solid #e5e7eb;
+  color: #2563eb;
   display: block;
   font-size: 0.9375rem;
   padding: 1.25rem 0;
@@ -112,7 +112,7 @@ input {
 }
 
 .login__signup {
-  color: #2563EB;
+  color: #2563eb;
   display: block;
   font-size: 0.9375rem;
   padding: 1.25rem 0;
@@ -125,7 +125,7 @@ input {
 }
 
 .loading {
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, 0.8);
   display: block; /* Hidden by default */
   height: 100%; /* Full height */
   left: 0;
@@ -226,7 +226,7 @@ input {
 
 /* The Modal (background) */
 .signup {
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, 0.8);
   display: block; /* Hidden by default */
   height: 100%; /* Full height */
   left: 0;
@@ -264,12 +264,12 @@ input {
   padding: 1.25rem 1.25rem 0.5rem 0;
 }
 
-.signup__close img:hover { 
+.signup__close img:hover {
   cursor: pointer;
 }
 
 .signup__subtitle {
-  background: #E5E7EB;
+  background: #e5e7eb;
   height: 1px;
   margin-bottom: 0.5rem;
   width: 100%;
@@ -281,8 +281,8 @@ input {
 }
 
 .signup__form input {
-  background-color: #F3F4F6;
-  border: 1px solid #E5E7EB;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
   display: block;
   font-size: 0.9375rem;
   margin-bottom: 0.75rem;
@@ -291,8 +291,8 @@ input {
 }
 
 .signup__form select {
-  background-color: #F3F4F6;
-  border: 1px solid #E5E7EB;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
   display: block;
   font-size: 0.9375rem;
   height: 2.625rem;
@@ -303,7 +303,7 @@ input {
 }
 
 .signup__btn {
-  background-color:#000000;
+  background-color: #000000;
   border: 0;
   color: #fff;
   display: block;
@@ -366,7 +366,7 @@ input {
   opacity: 0.8;
 }
 
-.address { 
+.address {
   background-color: rgb(255, 255, 255);
   box-shadow: rgb(0 0 0 / 15%) 0px 4px 16px;
   height: 32.0625rem;
@@ -377,16 +377,16 @@ input {
   z-index: 999;
 }
 
-.address__title { 
+.address__title {
   align-items: center;
-  background-color: #2563EB;
+  background-color: #2563eb;
   color: #fff;
   display: grid;
   font-size: 1rem;
   height: 11.875rem;
 }
 
-.address__title-container { 
+.address__title-container {
   padding-left: 0.75rem;
   position: relative;
 }
@@ -426,18 +426,18 @@ input {
   left: 0%;
 }
 
-.search { 
+.search {
   padding: 0.75rem;
 }
 
-.search__input { 
-  background: #F3F4F6;
-  border: 1px solid #E5E7EB;
+.search__input {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
   font-size: 1rem;
   margin-bottom: 0.75rem;
   padding: 0.875rem 1rem;
   width: 100%;
-  border-bottom: 2px solid #2563EB;
+  border-bottom: 2px solid #2563eb;
 }
 
 .leaflet-routing-container {
@@ -478,7 +478,7 @@ input {
   overflow-y: auto;
 }
 
-.search__result-item { 
+.search__result-item {
   border-bottom: 1px solid #ccc;
   display: grid;
   grid-gap: 1rem;
@@ -487,9 +487,9 @@ input {
   padding-left: 0.5rem;
 }
 
-.search__result-item:hover { 
+.search__result-item:hover {
   cursor: pointer;
-  background: #F3F4F6;
+  background: #f3f4f6;
 }
 
 .search__result-icon {
@@ -510,7 +510,7 @@ input {
 
 /* The Modal (background) */
 .request-ride {
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, 0.8);
   display: block; /* Hidden by default */
   height: 100%; /* Full height */
   left: 0;
@@ -548,12 +548,12 @@ input {
   padding: 1.25rem 1.25rem 0.5rem 0;
 }
 
-.request-ride__close img:hover { 
+.request-ride__close img:hover {
   cursor: pointer;
 }
 
 .request-ride__subtitle {
-  background: #E5E7EB;
+  background: #e5e7eb;
   height: 1px;
   margin-bottom: 0.5rem;
   width: 100%;
@@ -565,7 +565,7 @@ input {
 }
 
 .request-ride__btn {
-  background-color:#000000;
+  background-color: #000000;
   border: 0;
   color: #fff;
   font-size: 1rem;
@@ -585,7 +585,7 @@ input {
   color: #000;
 }
 
-.ride-list { 
+.ride-list {
   background-color: rgb(255, 255, 255);
   box-shadow: rgb(0 0 0 / 15%) 0px 4px 16px;
   height: 32.0625rem;
@@ -618,7 +618,7 @@ input {
   overflow-y: auto;
 }
 
-.ride-list__result-item { 
+.ride-list__result-item {
   border-bottom: 1px solid #ccc;
   display: grid;
   grid-gap: 1rem;
@@ -627,9 +627,9 @@ input {
   padding-left: 0.5rem;
 }
 
-.ride-list__result-item:hover { 
+.ride-list__result-item:hover {
   cursor: pointer;
-  background: #F3F4F6;
+  background: #f3f4f6;
 }
 
 .ride-list__result-icon {
@@ -687,7 +687,7 @@ input {
   z-index: 999;
 }
 
-.ride-detail__user-avatar { 
+.ride-detail__user-avatar {
   display: grid;
   justify-content: center;
   padding-bottom: 1rem;
