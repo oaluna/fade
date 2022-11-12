@@ -21,6 +21,9 @@ import Carousel, { carouselClasses } from "mui-carousel";
 import FadeLogo from "../assets/fade-logo.svg";
 import WhatIsFadeLeft from "../assets/whatisfadeleft.png";
 import WhatIsFadeRight from "../assets/whatisfaderight.png";
+import cityDriver from "../assets/cityDriver.png";
+import getMatched from "../assets/getMatched.png";
+import enterItinerary from "../assets/enterItinerary.png";
 
 const steps = [
   "Enter Itinerary Details",
@@ -232,10 +235,7 @@ const HomePage = () => {
                 }}
               >
                 <Typography variant="h6">
-                  How does it work? Fade matches a rider's daily itinerary with
-                  a driver's similar itinerary. If the driver's itinerary works
-                  for you, subscribe to their commute times for a small fee to
-                  ride with them regularly.{" "}
+                  How does it work? Fade matches your itinerary with the closest match available among Drivers. Once matched, you may subscribe to the driver's driving route, if their daily schedule works with yours. Now you have a small group that you carpool with. Yay!{" "}
                 </Typography>
               </Item>
             </Grid>
@@ -304,14 +304,14 @@ const HomePage = () => {
                       </Typography>
                       <Typography color="text.secondary" sx={{ mt: 4 }}>
                         Enter a pickup address and a dropoff address, as well as
-                        the date(s) and time you need to be picked up.
+                        the date(s) and time(s) you need to be picked up.
                       </Typography>
                     </Grid>
                     <Grid item xs={12} md={6}>
                       <Box
                         alt="hero"
                         component="img"
-                        src="https://img.freepik.com/free-vector/city-driver-concept-illustration_114360-1209.jpg?w=996&t=st=1667858164~exp=1667858764~hmac=537375a9c6b69536e785bef685112971c6bb14c6e06c8586dae884acedec01db"
+                        src={getMatched}
                         sx={{ width: "100%" }}
                       />
                     </Grid>
@@ -344,7 +344,7 @@ const HomePage = () => {
                       <Box
                         alt="hero"
                         component="img"
-                        src="https://img.freepik.com/free-vector/man-with-map-smartphone-renting-car-driver-using-car-sharing-app-phone-searching-vehicle-vector-illustration-transport-transportation-urban-traffic-location-app-concept_74855-10109.jpg?w=1060&t=st=1667858235~exp=1667858835~hmac=fd33c14294db89eed2426233cfaa4df8c6f6e66dd8d82eb2aac971099b1d47a6"
+                        src={enterItinerary}
                         sx={{ width: "100%" }}
                       />
                     </Grid>
@@ -386,8 +386,8 @@ const HomePage = () => {
                       <Box
                         alt="hero"
                         component="img"
-                        src="https://img.freepik.com/free-vector/happy-passenger-looking-out-roof-car-with-hands-up-friends-having-fun-road-trip-together-flat-vector-illustration-summer-vacation-concept-banner-website-design-landing-page_74855-21176.jpg?w=996&t=st=1667858409~exp=1667859009~hmac=8cebfabe29c20ca64184bd4bf78c04f8ba1e913100fd957b425033ec283e8df3"
-                        sx={{ width: "100%" }}
+                        src={cityDriver}
+                        sx={{ width: "100%", margin: "0 auto" }}
                       />
                     </Grid>
                   </Grid>
@@ -438,7 +438,7 @@ const HomePage = () => {
         >
           <Box sx={{ textAlign: "center", mb: 1 }}>
             <Typography component="h2" variant="h4" color="white">
-              Signing Up on Fade
+              Signing Up for Fade
             </Typography>
           </Box>
           <Grid container spacing={4}>

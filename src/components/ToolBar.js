@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+
+import { Link } from "react-router-dom";
+
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -53,7 +56,43 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const options = ["ABOUT", "HOW IT WORKS", "PRICING", "DOWNLOAD", "SUBSCRIBE", "SIGN UP/LOGIN"];
+const routes = [
+  {
+    id: 0,
+    routeName: "ABOUT",
+    route: "/about",
+  },
+  {
+    id: 1,
+    routeName: "HOW IT WORKS",
+    route: "/howitworks",
+  },
+  {
+    id: 2,
+    routeName: "PRICING",
+    route: "/pricing",
+  },
+  {
+    id: 3,
+    routeName: "PRICING",
+    route: "/pricing",
+  },
+  {
+    id: 4,
+    routeName: "DOWNLOAD",
+    route: "/download",
+  },
+  {
+    id: 5,
+    routeName: "SUBSCRIBE",
+    route: "/subscribe",
+  },
+  {
+    id: 6,
+    routeName: "SIGN UP",
+    route: "/signup",
+  },
+];
 
 const ITEM_HEIGHT = 48;
 
@@ -96,31 +135,33 @@ export default function ToolBar() {
               onClose={handleClose}
               PaperProps={{
                 style: {
-                  background:"linear-gradient(135deg, rgba(255,255,255,0.11) 0%, rgba(255,255,255,0.06) 94%)",
+                  background:
+                    "linear-gradient(135deg, rgba(255,255,255,0.11) 0%, rgba(255,255,255,0.06) 94%)",
                   color: "white",
-                  backdropFilter:"blur(12px)",
-                  height: "90vh",
+                  backdropFilter: "blur(12px)",
+                  height: "80vh",
                   width: "20ch",
+                  marginTop:"3vh"
                 },
               }}
             >
-              {options.map((option) => (
-                <MenuItem
-                  key={option}
-                  selected={option === "Pyxis"}
-                  onClick={handleClose}
-                >
-                  {option}
+              {routes.map((route) => (
+                <MenuItem key={route.id} onClick={handleClose}>
+                  <a href={route.route} style={{ textDecoration: "none", color:"white" }}>
+                    {route.routeName}
+                  </a>
                 </MenuItem>
               ))}
             </Menu>
           </div>
           <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
-            <img
-              src={FadeLogo}
-              alt="fade"
-              style={{ width: 100, clipPath: "inset(0% 0% 15% 0%)" }}
-            />
+            <Link to="/">
+              <img
+                src={FadeLogo}
+                alt="fade"
+                style={{ width: 100, clipPath: "inset(0% 0% 15% 0%)" }}
+              />
+            </Link>
           </Box>
           <Search>
             <SearchIconWrapper>

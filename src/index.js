@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {StateMachineProvider} from "little-state-machine"
 import './index.css';
 import AppRouters from './routers/AppRouters';
 import reportWebVitals from './reportWebVitals';
@@ -8,9 +9,9 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-   
+   <StateMachineProvider>
     <AppRouters />
-   
+    </StateMachineProvider>
   </React.StrictMode>
 );
 

@@ -21,8 +21,12 @@ code {
 }
 
 input {
-  outline: none;
-  border: none;
+border: none;
+padding:15px;
+  position: relative;
+  width: 60vw;
+  margin: 25px auto;
+  height: 64px;
 }
 
 ::-webkit-scrollbar {
@@ -135,6 +139,14 @@ input {
   top: 0;
   width: 100%; /* Full width */
   z-index: 1000; /* Sit on top */
+}
+
+.MuiTypography-h4 > b {
+  display: none;
+}
+
+.MuiContainer-maxWidthMd .login-form {
+  width: "75vw" !important;
 }
 
 .lds-roller {
