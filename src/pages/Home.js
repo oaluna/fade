@@ -21,7 +21,7 @@ import Carousel, { carouselClasses } from "mui-carousel";
 import FadeLogo from "../assets/fade-logo.svg";
 import WhatIsFadeLeft from "../assets/whatisfadeleft.png";
 import WhatIsFadeRight from "../assets/whatisfaderight.png";
-import cityDriver from "../assets/cityDriver.png";
+import DriverImage from "../assets/DriverImage.png";
 import getMatched from "../assets/getMatched.png";
 import enterItinerary from "../assets/enterItinerary.png";
 
@@ -386,7 +386,7 @@ const HomePage = () => {
                       <Box
                         alt="hero"
                         component="img"
-                        src={cityDriver}
+                        src={DriverImage}
                         sx={{ width: "100%", margin: "0 auto" }}
                       />
                     </Grid>
