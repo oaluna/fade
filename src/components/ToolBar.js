@@ -74,21 +74,16 @@ const routes = [
   },
   {
     id: 3,
-    routeName: "PRICING",
-    route: "/pricing",
-  },
-  {
-    id: 4,
     routeName: "DOWNLOAD",
     route: "/download",
   },
   {
-    id: 5,
+    id: 4,
     routeName: "SUBSCRIBE",
     route: "/subscribe",
   },
   {
-    id: 6,
+    id: 5,
     routeName: "SIGN UP",
     route: "/signup",
   },

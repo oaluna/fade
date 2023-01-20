@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {StateMachineProvider} from "little-state-machine"
-import './index.css';
-import AppRouters from './routers/AppRouters';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { ThemeProvider } from "@mui/material";
+import { BrowserRouter } from "react-router-dom";
+import { StateMachineProvider } from "little-state-machine";
+import "./index.css";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import Main from "./Main";
+import reportWebVitals from "./reportWebVitals";
 
+let theme = createTheme();
+theme = responsiveFontSizes(theme);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-   <StateMachineProvider>
-    <AppRouters />
-    </StateMachineProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <StateMachineProvider>
+          <Main />
+        </StateMachineProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

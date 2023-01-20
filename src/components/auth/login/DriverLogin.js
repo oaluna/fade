@@ -50,13 +50,13 @@ const DriverLogin = (props) => {
           required: "Required"
         })}
       />
-      {/* <label>Age:</label>
+      <label>Age:</label>
       <input
         type="number"
         {...register("age", {
           valueAsNumber: true
         })}
-      /> */}
+      />
       <input type="submit" />
     </form>
   );
