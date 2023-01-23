@@ -1,12 +1,15 @@
 import React from "react";
 import Box from "@mui/material/Box"
 import FadeLogoAlt from "../assets/fade-logo-alt.png"
+import Gradient from "../assets/gradient-bg3.png"
 
 const AboutPage = () => {
   return (
     <>
       <section className="aboutUs">
-        <div className="cover"></div>
+        <div className="cover">
+          
+        </div>
         <Box className="container">
           <h1 className="text-center">About Us</h1>
           <h3>
@@ -39,10 +42,11 @@ const AboutPage = () => {
             className="my-5 p-5"
             style={{ fontWeight: "bold", textAlign: "center" }}
           >
+          <div style={{background: `url(../assets/gradient-bg3.png)`}}>
             <img src={FadeLogoAlt} alt="logo" />
             <br />
             <br />
-
+</div>
             <span className="lastLine">Have a nice day !</span>
           </p>
         </Box>

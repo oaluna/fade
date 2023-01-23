@@ -18,13 +18,16 @@ import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import Carousel, { carouselClasses } from "mui-carousel";
-import FadeLogo from "../assets/fade-logo.svg";
+
+import Hero from "../components/Hero";
+
 import WhatIsFadeLeft from "../assets/whatisfadeleft.png";
 import WhatIsFadeRight from "../assets/whatisfaderight.png";
 import DriverImage from "../assets/DriverImage.png";
 import getMatched from "../assets/getMatched.png";
 import enterItinerary from "../assets/enterItinerary.png";
-import Gradient from "../assets/gradient-bg3.png"
+import Gradient from "../assets/gradient-bg3.png";
+import "./Home.css";
 
 const steps = [
   "Enter Itinerary Details",
@@ -61,9 +64,10 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const HomePage = () => {
+const HomePage = ({ open, children, ...props }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
+  const items = React.Children.toArray(children);
 
   const isStepSkipped = (step) => {
     return skipped.has(step);
@@ -95,75 +99,19 @@ const HomePage = () => {
     setActiveStep(0);
   };
 
-
   return (
     <div>
       {/* hero */}
-      <div
-        className="hero-bg"
-        style={{
-          backgroundImage:`url(${Gradient})`,
-          backgroundBlendMode:
-            "soft-light, screen, overlay, overlay, difference, overlay, normal",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          position: "relative",
-          width: "100vw",
-          height: "100vh",
-        }}
-      >
-        <div
-          className="hero"
-          style={{
-            width: "100vw",
-            height: "100vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-evenly",
+      <Hero />
 
-            position: "absolute",
-            background: "#fcf7ff",
-            //   "url(https://images.pexels.com/photos/2120/city-traffic-people-smartphone.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            mixBlendMode: "multiply",
-            transform: "rotateX(180deg)",
-            backdropFilter: "blur(44px)",
-          }}
-        ></div>
-        <div
-          style={{
-            width: "50%",
-            height: "100vh",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            marginLeft: 125,
-            textAlign: "left",
-            position: "relative",
-          }}
-        >
-          <img src={FadeLogo} alt="logo" style={{ transform: "scale(1.5)" }} />
-          <Typography
-            variant="h4"
-            fontWeight="bold"
-            color={"#fff"}
-            sx={{ mt: 15 }}
-          >
-            Save time and money spent on your daily commute.
-          </Typography>
-        </div>
-        <div className="device-image">
-          <img src="https://res.cloudinary.com/dgdnpkfun/image/upload/v1674248831/image_1_mcv5bp.png" alt="android" style={{width: "300px", position:"absolute", top:80, right: 250}} />
-        </div>
-      </div>
       {/* about us */}
       <div className="about">
         <Box sx={{ width: "100%" }}>
-          <Grid container rowSpacing={1} columnSpacing={{ xs: 1 }}>
+          <Grid
+            container
+            rowSpacing={1}
+            columnSpacing={{ xs: 1, sm: 1, md: 1 }}
+          >
             <Item
               sx={{
                 boxShadow: "none",
@@ -182,10 +130,13 @@ const HomePage = () => {
           <Grid
             container
             rowSpacing={1}
-            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+            columnSpacing={{ xs: 1, md: 3 }}
+            columnWidth={{ xs: 1 }}
+            sx={{ alignItems: "center" }}
           >
-            <Grid item xs={6}>
+            <Grid item xs={6} columnSpacing={{ xs: 1 }}>
               <Item
+                xs={3}
                 sx={{
                   boxShadow: "none",
                   background: "transparent",
@@ -193,36 +144,22 @@ const HomePage = () => {
                 }}
               >
                 <img
-                  src={WhatIsFadeLeft}
+                  src="https://res.cloudinary.com/dgdnpkfun/image/upload/v1674448163/Galaxy_Note_20_Ultra_qnkpgl.png"
                   alt="fade"
-                  style={{ objectFit: "cover", width: "100%" }}
+                  style={{ objectFit: "cover", width: "100%", transform: "scale(1.2)", marginLeft: "-15vw" }}
                 />
               </Item>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={6} columnSpacing={{ xs: 1 }}>
               <Item
+                xs={3}
                 sx={{
                   boxShadow: "none",
                   background: "transparent",
                   border: "none",
                 }}
               >
-                <img
-                  src={WhatIsFadeRight}
-                  alt="fade"
-                  style={{ objectFit: "cover", width: "100%" }}
-                />
-              </Item>
-            </Grid>
-            <Grid item xs={6} sx={{ mb: 15 }}>
-              <Item
-                sx={{
-                  boxShadow: "none",
-                  border: "none",
-                  background: "transparent",
-                }}
-              >
-                <Typography variant="h6">
+                <Typography variant="h6" style={{fontSize: 20, textAlign:'left', fontWeight: 400, letterSpacing: "-0.5px"}}>
                   Fade is a carpooling service that aims to reduce the time and
                   money you spend on your daily commute,by encouraging our users
                   to travel together. We aim to unburden you of long bus rides
@@ -230,36 +167,75 @@ const HomePage = () => {
                 </Typography>
               </Item>
             </Grid>
-            <Grid item xs={6} sx={{ mb: 15 }}>
+          </Grid>
+        </Box>
+        <Box sx={{ width: "100%", maxWidth: "80vw", margin: "0 auto" }}>
+          <Grid
+            container
+            rowSpacing={1}
+            columnSpacing={{ xs: 1, md: 5 }}
+            columnWidth={{ xs: 1 }}
+            sx={{ alignItems: "center" }}
+          >
+            <Grid item xs={6} columnSpacing={{ xs: 1 }}>
               <Item
+                xs={3}
                 sx={{
                   boxShadow: "none",
-                  border: "none",
                   background: "transparent",
+                  border: "none",
                 }}
               >
-                <Typography variant="h6">
-                  How does it work? Fade matches your itinerary with the closest match available among Drivers. Once matched, you may subscribe to the driver's driving route, if their daily schedule works with yours. Now you have a small group that you carpool with. Yay!{" "}
+                <Typography variant="h6" style={{fontWeight: 400, textAlign: "left"}}>
+                  How does it work? Fade matches your itinerary with the closest
+                  match available among Drivers. Once matched, you may subscribe
+                  to the driver's driving route, if their daily schedule works
+                  with yours. Now you have a small group that you carpool with.
+                  Yay!
                 </Typography>
+              </Item>
+            </Grid>
+            <Grid item xs={6} columnSpacing={{ xs: 1 }}>
+              <Item
+                xs={3}
+                sx={{
+                  boxShadow: "none",
+                  background: "transparent",
+                  border: "none",
+                }}
+              >
+                <img
+                  src="https://res.cloudinary.com/dgdnpkfun/image/upload/v1674448163/iPhone_13_ethw8e.png"
+                  alt="fade"
+                  style={{ objectFit: "cover", width: "100%" }}
+                />
               </Item>
             </Grid>
           </Grid>
         </Box>
       </div>
+
       {/* how it works */}
-      <Box sx={{ width: "60%", height: "80vh", margin: "0 auto" }}>
+      <Box
+        sx={{
+          width: "60vw",
+          height: "100vh",
+          margin: "0 auto",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+        }}
+      >
         <Stepper
           activeStep={activeStep}
           sx={{ display: "flex", alignItems: "center", color: "#2afbff" }}
         >
           {steps.map((label, index) => {
-            const stepProps = {
-          
-            };
+            const stepProps = {};
             const labelProps = {};
 
             return (
-              <Step key={label} {...stepProps} >
+              <Step key={label} {...stepProps}>
                 <StepLabel {...labelProps}>{label}</StepLabel>
               </Step>
             );
@@ -297,13 +273,16 @@ const HomePage = () => {
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "center",
-                  py: 10,
+                  justifyContent: "center",
+                  height: "80vh",
+                  width: "80vw",
+                  mx: "auto",
                 }}
               >
                 <Container maxWidth="lg">
                   <Grid container alignItems="center" spacing={3}>
                     <Grid item xs={12} md={5}>
-                      <Typography component="h1" variant="h3">
+                      <Typography component="h1" variant="h4">
                         Enter your Itinerary Details
                       </Typography>
                       <Typography color="text.secondary" sx={{ mt: 4 }}>
@@ -311,12 +290,17 @@ const HomePage = () => {
                         the date(s) and time(s) you need to be picked up.
                       </Typography>
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                      <Box
+                    <Grid
+                      item
+                      xs={12}
+                      md={6}
+                      sx={{ height: "80vh", py: 15 }}
+                    >
+                      <img
                         alt="hero"
-                        component="img"
-                        src={getMatched}
-                        sx={{ width: "100%" }}
+                      className="getmatched"
+                        src="https://res.cloudinary.com/dgdnpkfun/image/upload/v1674502119/Google_Pixel_6a_device_frame_a2jahs.png"
+                       
                       />
                     </Grid>
                   </Grid>
@@ -336,7 +320,7 @@ const HomePage = () => {
                 <Container maxWidth="lg">
                   <Grid container alignItems="center" spacing={3}>
                     <Grid item xs={12} md={5}>
-                      <Typography component="h1" variant="h3">
+                      <Typography component="h1" variant="h4">
                         Get matched with a Fade Driver
                       </Typography>
                       <Typography color="text.secondary" sx={{ mt: 4 }}>
@@ -348,8 +332,8 @@ const HomePage = () => {
                       <Box
                         alt="hero"
                         component="img"
-                        src={enterItinerary}
-                        sx={{ width: "100%" }}
+                        src="https://res.cloudinary.com/dgdnpkfun/image/upload/v1674516353/Google_Pixel_6_device_frame_pkdjpz.png"
+                        sx={{ width: "90%", mx: "auto", pl:25 }}
                       />
                     </Grid>
                   </Grid>
@@ -369,7 +353,7 @@ const HomePage = () => {
                 <Container maxWidth="lg">
                   <Grid container alignItems="center" spacing={3}>
                     <Grid item xs={12} md={5}>
-                      <Typography component="h1" variant="h3">
+                      <Typography component="h1" variant="h4">
                         Subscribe, and Ride. Don't forget the fade.
                       </Typography>
                       <Typography color="text.secondary" sx={{ mt: 4 }}>
@@ -416,8 +400,7 @@ const HomePage = () => {
       <Box
         component="section"
         sx={{
-          background:
-            "radial-gradient(65% 100% at 50% 0%, #00FF94 0%, rgba(0, 255, 148, 0.25) 100%), linear-gradient(230deg, #000000 25%, #170059 100%), linear-gradient(215deg, #FFEBB9 10%, #19004E 80%), radial-gradient(100% 245% at 100% 100%, #FFFFFF 0%, #000353 100%), linear-gradient(125deg, #1400FF 0%, #3A0000 100%), linear-gradient(225deg, #00F0FF 30%, #000B6F 45%, #00EBFC 45%, #001676 65%, #00E1F6 65%, #001676 85%, #00ECFD 85%, #001676 100%), linear-gradient(135deg, #00F0FF 0%, #000B6F 15%, #00EBFC 15%, #001676 35%, #00E1F6 35%, #001676 55%, #00ECFD 55%, #001676 100%)",
+          backgroundImage: Gradient,
           backgroundBlendMode:
             "soft-light, screen, overlay, overlay, difference, overlay, normal",
           backgroundSize: "cover",
@@ -643,17 +626,16 @@ const HomePage = () => {
         }}
       >
         <Container maxWidth="md">
-          <Card
-            sx={{
-              background:
-                "radial-gradient(65% 100% at 50% 0%, #00FF94 0%, rgba(0, 255, 148, 0.25) 100%), linear-gradient(230deg, #000000 25%, #170059 100%), linear-gradient(215deg, #FFEBB9 10%, #19004E 80%), radial-gradient(100% 245% at 100% 100%, #FFFFFF 0%, #000353 100%), linear-gradient(125deg, #1400FF 0%, #3A0000 100%), linear-gradient(225deg, #00F0FF 30%, #000B6F 45%, #00EBFC 45%, #001676 65%, #00E1F6 65%, #001676 85%, #00ECFD 85%, #001676 100%), linear-gradient(135deg, #00F0FF 0%, #000B6F 15%, #00EBFC 15%, #001676 35%, #00E1F6 35%, #001676 55%, #00ECFD 55%, #001676 100%)",
+          <div
+            style={{
+              backgroundImage: `url(${Gradient})`,
               backgroundBlendMode:
                 "soft-light, screen, overlay, overlay, difference, overlay, normal",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
 
-              color: "background.default",
+              color: "#fff",
               position: "absolute",
               left: 0,
               width: "100vw",
@@ -685,7 +667,7 @@ const HomePage = () => {
                 sx={{ bgcolor: "background.default", pr: 0.5 }}
               />
             </CardContent>
-          </Card>
+          </div>
         </Container>
       </Box>
     </div>

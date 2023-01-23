@@ -1,0 +1,32 @@
+.hero-text {
+  transform: scale(1.5);
+  animation: fade 2000ms ease-in;
+}
+
+@media screen and (min-width: 250px) {
+  .hero-text {
+    transform: scale(0.75);
+  }
+  .device-image .device {
+    flex-direction:column;
+    align-self:flex-end;
+    margin-right: -40vw;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  .hero-text {
+    transform: scale(1);
+  }
+  .device-image .device {
+    flex-direction:row;
+    align-self:flex-end;
+    margin-right: 0vw;
+  }
+}
+.getmatched {
+  transform: scale(0.75);
+  clip-path: inset(55% 0% 0% 0% );
+  margin-top: -55vh;
+
+}
