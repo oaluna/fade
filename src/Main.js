@@ -5,14 +5,14 @@ import Footer from "./components/Footer"
 
 const Main = () => {
   return (
-    <div>
+    <>
       <ToolBar />
       <main>
        
         <AppRouters />
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
 

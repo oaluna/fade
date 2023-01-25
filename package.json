@@ -33,6 +33,7 @@
     "react-scripts": "5.0.1",
     "react-spring": "^9.6.1",
     "react-swipeable-views": "^0.14.0",
+    "styled-components": "^5.3.6",
     "twemoji": "^13.0.1",
     "uuid": "^8.3.2",
     "validator": "^13.6.0",

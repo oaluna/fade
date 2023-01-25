@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
@@ -6,7 +7,6 @@ import CheckIcon from "@mui/icons-material/Check";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { styled } from "@mui/material/styles";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
@@ -56,13 +56,20 @@ const accountTypes = [
   },
 ];
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(5),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
+const Item = styled.div`
+  background-color: transparent;
+  padding: 5;
+  text-align: center;
+  color: #000000;
+  box-shadow: none;
+  border: none;
+`;
+
+const HomePageStyles = styled.div`
+  text-align: center;
+  width: 100vw;
+  overflow-x: hidden;
+`;
 
 const HomePage = ({ open, children, ...props }) => {
   const [activeStep, setActiveStep] = useState(0);
@@ -100,12 +107,12 @@ const HomePage = ({ open, children, ...props }) => {
   };
 
   return (
-    <div>
+    <HomePageStyles>
       {/* hero */}
       <Hero />
 
       {/* about us */}
-      <div className="about">
+      <div className="about" style={{margin: "25vh auto"}}>
         <Box sx={{ width: "100%" }}>
           <Grid
             container
@@ -146,7 +153,13 @@ const HomePage = ({ open, children, ...props }) => {
                 <img
                   src="https://res.cloudinary.com/dgdnpkfun/image/upload/v1674448163/Galaxy_Note_20_Ultra_qnkpgl.png"
                   alt="fade"
-                  style={{ objectFit: "cover", width: "100%", transform: "scale(1.2)", marginLeft: "-15vw" }}
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    transform: "scale(1.2)",
+                    marginLeft: "-15vw",
+                    marginTop: "15vh",
+                  }}
                 />
               </Item>
             </Grid>
@@ -159,7 +172,15 @@ const HomePage = ({ open, children, ...props }) => {
                   border: "none",
                 }}
               >
-                <Typography variant="h6" style={{fontSize: 20, textAlign:'left', fontWeight: 400, letterSpacing: "-0.5px"}}>
+                <Typography
+                  variant="h6"
+                  style={{
+                    fontSize: 20,
+                    textAlign: "left",
+                    fontWeight: 400,
+                    letterSpacing: "-0.5px",
+                  }}
+                >
                   Fade is a carpooling service that aims to reduce the time and
                   money you spend on your daily commute,by encouraging our users
                   to travel together. We aim to unburden you of long bus rides
@@ -186,7 +207,10 @@ const HomePage = ({ open, children, ...props }) => {
                   border: "none",
                 }}
               >
-                <Typography variant="h6" style={{fontWeight: 400, textAlign: "left"}}>
+                <Typography
+                  variant="h6"
+                  style={{ fontWeight: 400, textAlign: "left" }}
+                >
                   How does it work? Fade matches your itinerary with the closest
                   match available among Drivers. Once matched, you may subscribe
                   to the driver's driving route, if their daily schedule works
@@ -204,10 +228,12 @@ const HomePage = ({ open, children, ...props }) => {
                   border: "none",
                 }}
               >
-                <img
+             <Box
+                        alt="hero"
+                        component="img"
                   src="https://res.cloudinary.com/dgdnpkfun/image/upload/v1674448163/iPhone_13_ethw8e.png"
-                  alt="fade"
-                  style={{ objectFit: "cover", width: "100%" }}
+                  sx={{ width: "100%", mx: "auto", px:10 }}
+
                 />
               </Item>
             </Grid>
@@ -220,7 +246,7 @@ const HomePage = ({ open, children, ...props }) => {
         sx={{
           width: "60vw",
           height: "100vh",
-          margin: "0 auto",
+          margin: "25vh auto",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "space-evenly",
@@ -290,17 +316,12 @@ const HomePage = ({ open, children, ...props }) => {
                         the date(s) and time(s) you need to be picked up.
                       </Typography>
                     </Grid>
-                    <Grid
-                      item
-                      xs={12}
-                      md={6}
-                      sx={{ height: "80vh", py: 15 }}
-                    >
-                      <img
+                    <Grid item xs={12} md={6} sx={{ height: "80vh", py: 15 }}>
+                    <Box
                         alt="hero"
-                      className="getmatched"
+                        component="img"
                         src="https://res.cloudinary.com/dgdnpkfun/image/upload/v1674502119/Google_Pixel_6a_device_frame_a2jahs.png"
-                       
+                        sx={{ width: "75%", mx: "auto", px:10 }}
                       />
                     </Grid>
                   </Grid>
@@ -324,16 +345,17 @@ const HomePage = ({ open, children, ...props }) => {
                         Get matched with a Fade Driver
                       </Typography>
                       <Typography color="text.secondary" sx={{ mt: 4 }}>
-                        Fade will match you with drivers' routes based on your
-                        needs, and you pick the route that works best for you.
+                        Fade will match you with drivers whose commutes are the
+                        closest matches to your needs, then select the one that
+                        works best for you.
                       </Typography>
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={6} sx={{ height: "80vh", py: 15 }}>
                       <Box
                         alt="hero"
                         component="img"
                         src="https://res.cloudinary.com/dgdnpkfun/image/upload/v1674516353/Google_Pixel_6_device_frame_pkdjpz.png"
-                        sx={{ width: "90%", mx: "auto", pl:25 }}
+                        sx={{ width: "100%", mx: "auto", px:10 }}
                       />
                     </Grid>
                   </Grid>
@@ -357,9 +379,9 @@ const HomePage = ({ open, children, ...props }) => {
                         Subscribe, and Ride. Don't forget the fade.
                       </Typography>
                       <Typography color="text.secondary" sx={{ mt: 4 }}>
-                        Do you take this route frequently? You can subscribe to
-                        a Fade driver's route for a small fee and ride with them
-                        regularly.
+                        If the commute works out for both driver and rider, you
+                        can subscribe to a Fade driver's route and ride with
+                        them regularly.
                       </Typography>
                       <Stack direction="row" spacing={2} sx={{ mt: 4 }}>
                         <Button size="xl" variant="outlined">
@@ -370,7 +392,7 @@ const HomePage = ({ open, children, ...props }) => {
                         </Button>
                       </Stack>
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={6} sx={{ height: "80vh", py: 15 }}>
                       <Box
                         alt="hero"
                         component="img"
@@ -397,109 +419,106 @@ const HomePage = ({ open, children, ...props }) => {
       </Box>
 
       {/* accounts */}
-      <Box
+      <div
         component="section"
-        sx={{
-          backgroundImage: Gradient,
+        style={{
+          backgroundImage: `url(${Gradient})`,
           backgroundBlendMode:
             "soft-light, screen, overlay, overlay, difference, overlay, normal",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          p: 0,
+          position: "relative",
+          width: "100vw",
+          height: "100vh",
+        }}
+      ></div>
+      <Container
+        maxWidth="lg"
+        sx={{
+          minWidth: "100vw",
+          backdropFilter: "blur(12px)",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          mx: "auto",
+          my: 0,
+          px: 25,
+          py: 10,
         }}
       >
-        <Container
-          maxWidth="lg"
-          sx={{
-            minWidth: "100vw",
-            backdropFilter: "blur(12px)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            mx: "auto",
-            my: 0,
-            px: 25,
-            py: 10,
-          }}
-        >
-          <Box sx={{ textAlign: "center", mb: 1 }}>
-            <Typography component="h2" variant="h4" color="white">
-              Signing Up for Fade
-            </Typography>
-          </Box>
-          <Grid container spacing={4}>
-            {accountTypes.map((account) => (
-              <Grid key={account.title} item xs={12} md={6}>
-                <Card
-                  sx={{
-                    mx: 15,
-                    boxShadow: "0px 1.5px 4px rgba(26,9,13,0.3)",
-                    border:
-                      account.title === "Fade Driver"
-                        ? "5px solid #6b7d7d"
-                        : "5px solid #ECDD7B",
-                  }}
-                >
-                  <CardContent>
-                    <Typography align="center" component="div" variant="h6">
-                      {account.title}
+        <Box sx={{ textAlign: "center", mb: 1 }}>
+          <Typography component="h2" variant="h4" color="white">
+            Signing Up for Fade
+          </Typography>
+        </Box>
+        <Grid container spacing={4}>
+          {accountTypes.map((account) => (
+            <Grid key={account.title} item xs={12} md={6}>
+              <Card
+                sx={{
+                  mx: 15,
+                  boxShadow: "0px 1.5px 4px rgba(26,9,13,0.3)",
+                  border: "none",
+                  backgroundColor: "#000040",
+                }}
+              >
+                <CardContent>
+                  <Typography align="center" component="div" variant="h6">
+                    {account.title}
+                  </Typography>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      mt: 4,
+                    }}
+                  >
+                    <Typography color="text.secondary" component="div">
+                      $
                     </Typography>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        mt: 4,
-                      }}
-                    >
-                      <Typography color="text.secondary" component="div">
-                        $
-                      </Typography>
-                      <Typography component="div" variant="h3">
-                        {account.price}
-                      </Typography>
-                    </Box>
-                    <Stack spacing={2} sx={{ mt: 4 }}>
-                      {account.features.map((feature) => (
-                        <Box
-                          key={feature}
-                          sx={{
-                            display: "flex",
-                            flexDirection: "row",
-                            alignItems: "center",
-                          }}
-                        >
-                          <CheckIcon color="primary" sx={{ mr: 2 }} />
-                          <Typography color="text.secondary">
-                            {feature}
-                          </Typography>
-                        </Box>
-                      ))}
-                    </Stack>
+                    <Typography component="div" variant="h3">
+                      {account.price}
+                    </Typography>
+                  </Box>
+                  <Stack spacing={2} sx={{ mt: 4 }}>
+                    {account.features.map((feature) => (
+                      <Box
+                        key={feature}
+                        sx={{
+                          display: "flex",
+                          flexDirection: "row",
+                          alignItems: "center",
+                        }}
+                      >
+                        <CheckIcon color="primary" sx={{ mr: 2 }} />
+                        <Typography color="text.secondary">
+                          {feature}
+                        </Typography>
+                      </Box>
+                    ))}
+                  </Stack>
 
-                    <Button
-                      fullWidth
-                      sx={{
-                        mt: 4,
-                        backgroundColor:
-                          account.title === "Fade Driver"
-                            ? "#6b7d7d"
-                            : "#ecdd7b",
-                        boxShadow: "0px 1.5px 4px rgba(26,9,13,0.3)",
-                      }}
-                      variant="normal"
-                    >
-                      Buy Now
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
+                  <Button
+                    fullWidth
+                    sx={{
+                      mt: 4,
+                      backgroundColor:
+                        account.title === "Fade Driver" ? "#6b7d7d" : "#ecdd7b",
+                      boxShadow: "0px 1.5px 4px rgba(26,9,13,0.3)",
+                    }}
+                    variant="normal"
+                  >
+                    Buy Now
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
 
       {/* carousel */}
       <Box
@@ -670,7 +689,7 @@ const HomePage = ({ open, children, ...props }) => {
           </div>
         </Container>
       </Box>
-    </div>
+    </HomePageStyles>
   );
 };
 
