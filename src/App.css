@@ -48,3 +48,10 @@
   }
 }
 
+
+footer {
+  position: absolute;
+  top: 100%;
+  order: last;
+  bottom: 0%;
+}

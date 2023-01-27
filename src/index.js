@@ -8,7 +8,17 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import Main from "./Main";
 import reportWebVitals from "./reportWebVitals";
 
-let theme = createTheme();
+let theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 250,
+      sm: 430,
+      md: 768,
+      lg: 1024,
+      xl: 1280
+    }
+  }
+});
 theme = responsiveFontSizes(theme);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
