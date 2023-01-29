@@ -6,10 +6,11 @@ import Footer from "./components/Footer"
 const Main = () => {
   return (
     <div style={{position:"relative"}}>
-      <ToolBar />
       <main>
+      <ToolBar />
        
         <AppRouters />
+        <Footer />
       </main>
    
     </div>
