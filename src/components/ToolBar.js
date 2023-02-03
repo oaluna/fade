@@ -1,175 +1,152 @@
-import React, { useState } from "react";
+import React from "react";
+import styled from "styled-components";
+import PrimaryButton from "../components/button/PrimaryButton";
+import SecondaryButton from "./button/SecondaryButton";
+import Navigation from "./Navigation";
+import logo from "../assets/fade-logo-alt.png";
+import gradient from "../assets/gradient-bg3.png";
+import deviceFrames from "../assets/deviceFrames.png";
 
-import { Link } from "react-router-dom";
-
-import { styled, alpha } from "@mui/material/styles";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import InputBase from "@mui/material/InputBase";
-import MenuIcon from "@mui/icons-material/Menu";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import SearchIcon from "@mui/icons-material/Search";
-import FadeLogo from "../assets/fade-logo.svg";
-
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
-  },
-}));
-
-const routes = [
-  {
-    id: 0,
-    routeName: "ABOUT",
-    route: "/about",
-  },
-  {
-    id: 1,
-    routeName: "HOW IT WORKS",
-    route: "/howitworks",
-  },
-  {
-    id: 2,
-    routeName: "PRICING",
-    route: "/pricing",
-  },
-  {
-    id: 3,
-    routeName: "DOWNLOAD",
-    route: "/download",
-  },
-  {
-    id: 4,
-    routeName: "SUBSCRIBE",
-    route: "/subscribe",
-  },
-  {
-    id: 5,
-    routeName: "SIGN UP",
-    route: "/signup",
-  },
-];
-
-const ITEM_HEIGHT = 48;
-
-export default function ToolBar() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
+const HeaderContent = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar
-        position="absolute"
-        color="transparent"
-        sx={{ boxShadow: "none", zIndex: 20 }}
-      >
-        <Toolbar sx={{ boxShadow: "none", zIndex: 20 }}>
-          <div>
-            <IconButton
-              aria-label="more"
-              id="long-button"
-              aria-controls={open ? "long-menu" : undefined}
-              aria-expanded={open ? "true" : undefined}
-              aria-haspopup="true"
-              onClick={handleClick}
-            >
-              <MenuIcon sx={{ color: "white" }} />
-            </IconButton>
-            <Menu
-              id="long-menu"
-              MenuListProps={{
-                "aria-labelledby": "long-button",
-              }}
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              PaperProps={{
-                style: {
-                  background:
-                    "linear-gradient(135deg, rgba(255,255,255,0.11) 0%, rgba(255,255,255,0.06) 94%)",
-                  color: "white",
-                  backdropFilter: "blur(12px)",
-                  height: "80vh",
-                  width: "20ch",
-                  marginTop:"3vh"
-                },
-              }}
-            >
-              {routes.map((route) => (
-                <MenuItem key={route.id} onClick={handleClose}>
-                  <a href={route.route} style={{ textDecoration: "none", color:"white" }}>
-                    {route.routeName}
-                  </a>
-                </MenuItem>
-              ))}
-            </Menu>
+    <HeaderContentStyled>
+      <div className="left-content">
+        <div className="left-text-container">
+          <div className="logo-container" data-aos="zoom-in-right">
+            <img src={logo} alt="" />
           </div>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
-            <Link to="/">
-              <img
-                src={FadeLogo}
-                alt="fade"
-                style={{ width: 100, clipPath: "inset(0% 0% 15% 0%)" }}
-              />
-            </Link>
-          </Box>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-              sx={{ boxShadow: "inset 0px 1.5px 4px rgba(26,9,13,0.3)" }}
-            />
-          </Search>
-        </Toolbar>
-      </AppBar>
-    </Box>
+          <p className="white">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+            delectus architecto sed, corrupti sint nobis cumque numquam
+            provident molestias nemo sequi. Accusantium neque laboriosam nemo
+            fugit fuga. At, rem sed.
+          </p>
+          <SecondaryButton name="Registered now" />
+        </div>
+      </div>
+      <div className="right-content">
+        <img src={deviceFrames} alt="" className="phone" />
+      </div>
+    </HeaderContentStyled>
   );
-}
+};
+
+const HeaderContentStyled = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 3rem;
+  @media screen and (max-width: 700px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .left-content {
+    display: flex;
+    align-items: center;
+    padding-right: 3rem;
+    @media screen and (max-width: 480px) {
+      width: 100%;
+    }
+    .logo-container {
+      max-width: 50vw;
+      @media screen and (max-width: 700px) {
+        font-size: 3rem;
+      }
+    }
+    .white {
+      color: #fff;
+      line-height: 1.8rem;
+    }
+  }
+  .right-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .phone {
+      width: 80%;
+    }
+    .ring1 {
+      position: absolute;
+      bottom: 10%;
+      right: 0;
+      left: auto;
+      animation: move2 20s infinite;
+      transition: all 0.4s ease-in-out;
+    }
+    .message1 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: auto;
+      animation: move 5s infinite;
+      transition: all 0.4s ease-in-out;
+    }
+    .message2 {
+      position: absolute;
+      bottom: 15%;
+      left: 0;
+      transition: all 0.4s ease-in-out;
+      animation: move 8s infinite;
+      animation-delay: 0.5s;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+  .message1 {
+    @keyframes move {
+      0% {
+        transform: translateY(0) rotate(0) scale(0.3) translateX(0);
+      }
+      50% {
+        transform: translateY(-10px) rotate(20deg) scale(0.4) translateX(10px);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg) scale(0.5) translateX(0);
+      }
+    }
+    @keyframes move2 {
+      0% {
+        transform: translateY(0) rotate(0) scale(1) translateX(0);
+      }
+      50% {
+        transform: translateY(-10px) rotate(60deg) scale(1.1) translateX(10px);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg) scale(1) translateX(0);
+      }
+    }
+  }
+`;
+
+const Header = () => {
+  return (
+    <HeaderStyled id="header">
+      <div className="header-content">
+        <Navigation />
+        <HeaderContent />
+      </div>
+    </HeaderStyled>
+  );
+};
+
+const HeaderStyled = styled.header`
+  min-height: 100vh;
+  width: 100%;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 100%;
+  .header-content {
+    padding: 0 10rem;
+
+    @media screen and (max-width: 1347px) {
+      padding: 5rem 14rem;
+    }
+    @media screen and (max-width: 1186px) {
+      padding: 5rem 8rem;
+    }
+    @media screen and (max-width: 990px) {
+      padding: 5rem 4rem;
+    }
+  }
+`;
+
+export default Header;

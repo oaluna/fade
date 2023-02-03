@@ -320,7 +320,7 @@ const HowItWorks = ({ children }) => {
                             fontFamily: "Comfortaa, sans-serif",
                             letterSpacing: -0.5,
                             fontWeight: 700,
-                            backgroundColor: "#000040",
+                            backgroundColor: "#01000e",
                             color: "#fff",
                             border: "none",
                           }}
@@ -338,7 +338,7 @@ const HowItWorks = ({ children }) => {
                             fontFamily: "Comfortaa, sans-serif",
                             letterSpacing: -0.5,
                             fontWeight: 700,
-                            color: "#000040",
+                            color: "#01000e",
                             backgroundColor: "#2afbff",
                             border: "none",
                           }}

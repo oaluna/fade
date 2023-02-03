@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import Logo from "../assets/fade-logo.svg";
+import Logo from "../assets/fade-logo-alt.png";
 import { useLocation } from "react-router-dom";
-import {  createStore } from "little-state-machine";
+import { createStore } from "little-state-machine";
 import RiderLogin from "../components/auth/login/RiderLogin";
 import DriverLogin from "../components/auth/login/DriverLogin";
-
 
 import { Box, Tab, Typography, Tabs } from "@mui/material";
 

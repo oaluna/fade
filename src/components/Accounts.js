@@ -95,7 +95,7 @@ const Accounts = () => {
                   sx={{
                     boxShadow: "0px 1.5px 4px rgba(26,9,13,0.3)",
                     border: "none",
-                    backgroundColor: "#000040",
+                    backgroundColor: "#01000e",
                   }}
                 >
                   <CardContent xs={10} sm={10} md={10}>

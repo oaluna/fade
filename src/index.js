@@ -3,23 +3,13 @@ import ReactDOM from "react-dom/client";
 import { ThemeProvider } from "@mui/material";
 import { BrowserRouter } from "react-router-dom";
 import { StateMachineProvider } from "little-state-machine";
-import "./index.css";
+//import "./index.css";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import Main from "./Main";
+import GlobalStyle from './GlobalStyle';
 import reportWebVitals from "./reportWebVitals";
 
-let theme = createTheme({
-  breakpoints: {
-    values: {
-      xs: 250,
-      sm: 430,
-      md: 768,
-      lg: 1024,
-      xl: 1280
-    }
-  }
-});
-theme = responsiveFontSizes(theme);
+let theme = createTheme();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -27,6 +17,7 @@ root.render(
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <StateMachineProvider>
+        <GlobalStyle/>
           <Main />
         </StateMachineProvider>
       </ThemeProvider>

@@ -1,206 +1,120 @@
+import React from "react";
+import styled from "styled-components";
+import { InnerLayout } from "../styles/Layout";
+import logo from "../assets/app-icon.png";
 
-import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Unstable_Grid2";
-import FadeLogo from "../assets/fade-logo.svg";
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
-
-function Footer() {
+const Footer = () => {
   return (
-    <Box sx={{ flexGrow: 1, paddingTop: 20 }}>
-      <Grid container spacing={2}>
-        <Grid xs={12} md={5} lg={4}>
-          <Item
-            style={{
-              border: "none",
-              boxShadow: "none",
-              background: "transparent",
-            }}
-          >
-            <img src={FadeLogo} alt="Fade" style={{ width: 150 }} />
-          </Item>
-        </Grid>
-        <Grid container xs={12} md={7} lg={8} spacing={4}>
-          <Grid xs={6} lg={3}>
-            <Item
-              sx={{
-                boxShadow: "none",
-                border: "none",
-                background: "transparent",
-              }}
-            >
-              <Box
-                id="category-a"
-                sx={{ pl: 2, listStyle: "none", textAlign:"left", fontFamily: "Comfortaa, sans-serif"}}
-              >
-                Our Product
-              </Box>
-              <Box
-                component="ul"
-                aria-labelledby="category-a"
-                sx={{ pl: 2, listStyle: "none", textAlign:"left", fontFamily: "Comfortaa, sans-serif"}}
-              >
-                <li>Link 1.1</li>
-                <li>Link 1.2</li>
-                <li>Link 1.3</li>
-              </Box>
-            </Item>
-          </Grid>
-          <Grid xs={6} lg={3}>
-            <Item
-              sx={{
-                boxShadow: "none",
-                border: "none",
-                background: "transparent",
-              }}
-            >
-              <Box
-                component="ul"
-                aria-labelledby="category-b"
-                sx={{ pl: 2, listStyle: "none", textAlign:"left", fontFamily: "Comfortaa, sans-serif"}}
-              >
-                Accounts
-              </Box>
-              <Box
-                component="ul"
-                aria-labelledby="category-b"
-                sx={{ pl: 2, listStyle: "none", fontFamily: "Comfortaa, sans-serif", textAlign:"left" }}
-              >
-                <li>Link 2.1</li>
-                <li>Link 2.2</li>
-                <li>Link 2.3</li>
-              </Box>
-            </Item>
-          </Grid>
-          <Grid xs={6} lg={3}>
-            <Item
-              sx={{
-                boxShadow: "none",
-                border: "none",
-                background: "transparent",
-              }}
-            >
-              <Box
-                id="category-c"
-                sx={{ pl: 2, listStyle: "none", textAlign:"left", fontFamily: "Comfortaa, sans-serif"}}
-              >
-                Resources
-              </Box>
-              <Box
-                component="ul"
-                aria-labelledby="category-c"
-                sx={{ pl: 2, listStyle: "none", textAlign:"left", fontFamily: "Comfortaa, sans-serif"}}
-              >
-                <li>Link 3.1</li>
-                <li>Link 3.2</li>
-                <li>Link 3.3</li>
-              </Box>
-            </Item>
-          </Grid>
-          <Grid xs={6} lg={3}>
-            <Item
-             sx={{ pl: 2, listStyle: "none", textAlign:"left", fontFamily: "Comfortaa, sans-serif"}}
-            >
-              <Box
-                id="category-d"
-                sx={{ pl: 2, listStyle: "none", textAlign:"left", fontFamily: "Comfortaa, sans-serif"}}
-              >
-                Contact
-              </Box>
-              <Box
-                component="ul"
-                aria-labelledby="category-d"
-                sx={{ pl: 2, listStyle: "none" }}
-              >
-                <li><strong>Phone</strong>: (415)123-4567</li>
-               
-                <li><strong>Email</strong>: support@fade.ride</li>
-              </Box>
-            </Item>
-          </Grid>
-        </Grid>
-        <Grid
-          xs={12}
-          container
-          justifyContent="space-between"
-          alignItems="center"
-          flexDirection={{ xs: "column", sm: "row" }}
-          sx={{ fontSize: "12px" }}
-        >
-          <Grid sx={{ order: { xs: 2, sm: 1 } }}>
-            <Item sx={{ boxShadow: "none", border: "none", pl: 10, background:"transparent" }}>
-              © 2022 by <a href="https://oscarluna.dev">Oscar Armando Luna</a>
-            </Item>
-          </Grid>
-          <Grid container columnSpacing={1} sx={{ order: { xs: 1, sm: 2 } }}>
-            <Grid>
-              <Item
-                sx={{
-                  boxShadow: "none",
-                  border: "none",
-                  background: "transparent",
-                }}
-              >
-                Careers
-              </Item>
-            </Grid>
-            <Grid>
-              <Item
-                sx={{
-                  boxShadow: "none",
-                  border: "none",
-                  background: "transparent",
-                }}
-              >
-                Privacy Policy
-              </Item>
-            </Grid>
-            <Grid>
-              <Item
-                sx={{
-                  boxShadow: "none",
-                  border: "none",
-                  background: "transparent",
-                }}
-              >
-                Support
-              </Item>
-            </Grid>
-            <Grid xs={12} sm={12} md={12}>
-              <Item xs={5} sm={5} md={5} sx={{ boxShadow: "none", border: "none", background: "transparent" }}>
+    <FooterStyled>
+      <InnerLayout>
+        <div className="footer-con">
+          <div className="footer-left">
+            <span className="links">
+              <a href="/">Home</a>
+              <a href="https://oscarluna.dev">oscarluna.dev</a>
+              <a href="/howItWorks">How It Works</a>
+            </span>
+          </div>
+          <div className="footer-center">
+            <div className="logo-wrap">
+              <img src={logo} alt="" />
+            </div>
+          </div>
+          <div className="footer-right">
+          <span className="links">
+              <a href="/">Pricing</a>
+              <a href="/aboutUs">About</a>
              
-                
-                <img
-                  src="https://miro.medium.com/max/600/1*xqT83bMEz92IBYxS9UQNow.png"
-                  alt="app store"
-                  style={{ width: "40%", margin: "25px 15px" }}
-                />
-                </Item>
-            </Grid>
-            <Grid>
-              <Item
-               xs={5} sm={5} md={5} sx={{ boxShadow: "none", border: "none", background: "transparent" }}>
-                
-                <img
-                  src="https://miro.medium.com/max/600/1*nZu0dsnlCQltPT1QMCHFAA.png"
-                  alt="google play"
-                  style={{ width: "40%", margin: "25px 15px" }}
-                />
-                </Item>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-    </Box>
+            </span>
+          </div>
+        </div>
+      </InnerLayout>
+    </FooterStyled>
   );
-}
+};
+const FooterStyled = styled.footer`
+  background: radial-gradient(0% 0%, #180b41 0%, #000040 50%, #01000e 100%);
+  height: 15vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100vw;
+  margin-top: -5vh;
+  overflow-y: hidden;
+  z-index: 1;
+
+  @media screen and (max-width: 1347px) {
+    padding: 5rem 14rem;
+  }
+  @media screen and (max-width: 1186px) {
+    padding: 5rem 8rem;
+  }
+  @media screen and (max-width: 990px) {
+    padding: 5rem 4rem;
+  }
+
+  .footer-con {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+
+    @media screen and (max-width: 480px) {
+      grid-template-columns: repeat(1, 1fr);
+      .logo-wrap {
+        margin: 0 auto;
+      }
+    }
+  }
+  .footer-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding-right: 0;
+    a {
+      color: #fff;
+      font-size: 12px;
+    }
+  }
+  .footer-center {
+width: 100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  .footer-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding-left: 6.5rem;
+  }
+  .links {
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    a {
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5rem 0 0;
+      font-size: 12px;
+      text-transform: uppercase;
+      
+    }
+  }
+`;
+
 export default Footer;

@@ -1,32 +1,34 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React from "react";
 
-import Hero from "../components/Hero";
-import About from "../components/About";
-import HowItWorks from "../components/HowItWorks";
-import Accounts from "../components/Accounts";
-import CarouselComponent from "../components/Carousel";
-import Contact from "../components/Contact";
+import CardSection from "../Sections/CardSection";
+import ChartSection from "../Sections/ChartSection";
+import Footer from "../components/Footer";
+import Header from "../Sections/Header";
+import MessagingSection from "../Sections/MessagingSection";
+import PaymentSection from "../Sections/PricingSection";
+import { OuterLayout } from "../styles/Layout";
 
-import "./Home.css";
+import ScrolledButton from "../components/ScrolledButton";
 
-const HomePageStyles = styled.div`
-  text-align: center;
-  width: 100vw;
-  overflow-x: hidden;
-`;
+function Home() {
 
-const HomePage = () => {
+
   return (
-    <HomePageStyles>
-      <Hero />
-      <About />
-      <HowItWorks />
-      <Accounts />
-      <CarouselComponent />
-      <Contact />
-    </HomePageStyles>
+   <>
+      <Header />
+      <OuterLayout>
+        <main>
+          <CardSection />
+          <ChartSection />
+          <MessagingSection />
+        
+          <PaymentSection />
+        </main>
+      </OuterLayout>
+      <Footer />
+      <ScrolledButton />
+    </>
   );
-};
+}
 
-export default HomePage;
+export default Home;
