@@ -1,29 +1,51 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React, { useRef } from "react";
+import styled from "styled-components";
 import { InnerLayout } from "../styles/Layout";
-//import card from '../assets/img/creditcard.svg'
-import { fadeInLeft } from "react-animations";
+import { motion, useScroll } from "framer-motion";
 import deviceHomeDual from "../assets/deviceHomeDual.png";
 
 const featureList = [
-   {
-      id: 0,
-      header: "How does it work?",
-      body: "Fade matches your itinerary with the closest match available among Drivers."
-   },
-   {
-      id: 1,
-      header: "Matching drivers and riders",
-      body: "Once matched, you may subscribe to the driver's driving route, if their daily schedule works with yours."
-   },
-   {
-      id: 2,
-      header: "Never run after a bus again",
-      body: "With more people carpooling together, there could be less traffic overall. No more flipping off Uber cars."
-   },
-]
+  {
+    id: 0,
+    header: "How does it work?",
+    body: "Fade matches your itinerary with the closest match available among Drivers.",
+  },
+  {
+    id: 1,
+    header: "Matching drivers and riders",
+    body: "Once matched, you may subscribe to the driver's driving route, if their daily schedule works with yours.",
+  },
+  {
+    id: 2,
+    header: "Never run after a bus again",
+    body: "With more people carpooling together, there could be less traffic overall. No more flipping off Uber cars.",
+  },
+];
+
+const deviceVariants = {
+  offscreen: {
+    y: 300,
+ 
+  },
+  onscreen: {
+    y: 50,
+    rotate: -10,
+  
+    transition: {
+      type: "easeIn",
+      
+      duration: 2,
+    },
+   
+  }
+};
+
+
 
 const CardSection = () => {
+  const { scrollYProgress } = useScroll({
+    offset: ["start start", "end end"]
+  })
   return (
     <CardSectionStyled id="card">
       <InnerLayout>
@@ -45,24 +67,32 @@ const CardSection = () => {
               congested rush hour traffic.
             </span>
           </div>
-          <div className="card-center">
-            <img src={deviceHomeDual} alt="" />
-          </div>
+         
+         <motion.div className="card-center"
+      initial="offscreen"
+  whileInView="onscreen"
+  viewport={{ once: true }}
+  >
+      <motion.div variant={deviceVariants}>
+        <img src={deviceHomeDual} alt="" className="device-home-dual" style={{ offsetY: scrollYProgress }}/>
+      </motion.div>
+          </motion.div>
           <div className="card-right">
-          <div className="feature-list">
-          {featureList.map((feature) => (
-            <>
-               <div className="list-item" key={feature.id}>
-                  <span className="list-item-header">
-                  <h3>{feature.header}</h3></span>
-                  <span className="list-item-body">
-                     <p>{feature.body}</p>
-                  </span>
-               </div>
-            </>
-          ))}
+            <div className="feature-list">
+              {featureList.map((feature) => (
+                <>
+                  <div className="list-item" key={feature.id}>
+                    <span className="list-item-header">
+                      <h3>{feature.header}</h3>
+                    </span>
+                    <span className="list-item-body">
+                      <p>{feature.body}</p>
+                    </span>
+                  </div>
+                </>
+              ))}
+            </div>
           </div>
-           </div>
         </div>
       </InnerLayout>
     </CardSectionStyled>
@@ -79,17 +109,16 @@ const CardSectionStyled = styled.section`
 
   margin: 0;
   padding: 0;
-  position:relative;
+  position: relative;
   @keyframes fadeInUp {
-   0% {
+    0% {
       transform: translateY(20rem);
       opacity: 0;
-     
-   }
-   100% {
+    }
+    100% {
       transform: translateY(0);
       opacity: 1;
-   }
+    }
   }
   .card-container {
     display: flex;
@@ -100,20 +129,19 @@ const CardSectionStyled = styled.section`
     @media screen and (max-width: 845px) {
       flex-direction: column;
     }
-    
 
     .card-right {
       display: flex;
-      flex-direction:column;
+      flex-direction: column;
       justify-content: flex-end;
       .feature-list {
-         width: 20vw;
-         position: absolute;
+        width: 20vw;
+        position: absolute;
         top: 25vh;
         right: 12vw;
-        
+
         text-align: left;
-        justify-content:space-between;
+        justify-content: space-between;
 
         /* Text/Article */
 
@@ -123,7 +151,7 @@ const CardSectionStyled = styled.section`
         font-size: 12px;
         line-height: 28px;
         .list-item {
-         padding: 2rem 0;
+          padding: 2rem 0;
         }
       }
     }
@@ -154,18 +182,17 @@ const CardSectionStyled = styled.section`
       }
     }
   }
-    .card-header {
-      h2 {
+  .card-header {
+    h2 {
       display: flex;
       flex-direction: row;
-      align-items:flex-start;
-      justify-content:center;
+      align-items: flex-start;
+      justify-content: center;
       width: 100vw;
       height: auto;
       margin-left: -5rem;
-      
-      }
     }
+  }
 `;
 
 export default CardSection;

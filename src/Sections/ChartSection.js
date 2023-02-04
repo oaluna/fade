@@ -5,6 +5,7 @@ import gradient from "../assets/gradient-bg3.png";
 import iPhoneLarge from "../assets/iPhoneLarge.png";
 import iPhoneSmall from "../assets/iPhoneSmall.png";
 import AnimatedButton from "../components/AnimatedButton";
+import { motion } from "framer-motion";
 
 const data = [
   {
@@ -51,7 +52,11 @@ const ChartSection = () => {
             </ul>
             <AnimatedButton text={"Learn More"} />
           </div>
-          <div className="chart-right">
+          <motion.div className="chart-right"
+      initial="offscreen"
+  whileInView="onscreen"
+  viewport={{ once: true }}
+  >
             <img src={iPhoneLarge} alt="" className="iphone-lg"/>
             <img src={iPhoneSmall} alt="" className="iphone-sm"/>
             {/* <Roll right>
@@ -63,7 +68,7 @@ const ChartSection = () => {
             {/* <Bounce right>
                      <AnimatedButton name={'Learn More'} />
                   </Bounce> */}
-          </div>
+          </motion.div>
         </div>
       </InnerLayout>
     </ChartStyled>

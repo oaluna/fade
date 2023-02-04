@@ -15,7 +15,7 @@ const AnimatedButton = ({ text }) => {
 const AnimatedButtonStyled = styled.button`
    padding: 0.9rem 2rem;
    background-color: var(--dark-primary);
-   border: none;
+   border: 1px solid var(--primary);
    outline: none;
    border-radius: 18px;
    color: var(--primary);
@@ -25,6 +25,7 @@ const AnimatedButtonStyled = styled.button`
    display: flex;
    align-items: center;
    justify-content: space-around;
+   margin-top: 2rem;
    img{
       margin-left: 1rem;
       padding-left: inherit.9rem;
