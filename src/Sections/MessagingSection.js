@@ -3,6 +3,7 @@ import styled from "styled-components";
 import iconDriver from "../assets/icon-driver.png";
 import iconPassenger from "../assets/icon-passenger.png";
 import deviceDual from "../assets/deviceDual.png";
+import Fade from "react-reveal/Fade"
 
 const data = [
   {
@@ -24,7 +25,9 @@ const MessagingSection = () => {
  
        
           <div className="left-items">
+          <Fade left>
             <img src={deviceDual} alt="" />
+            </Fade>
           </div>
        
         <div className="right-items">

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import { InnerLayout } from "../styles/Layout";
-import { motion, useScroll } from "framer-motion";
+import Fade from "react-reveal/Fade"
 import deviceHomeDual from "../assets/deviceHomeDual.png";
 
 const featureList = [
@@ -22,30 +22,9 @@ const featureList = [
   },
 ];
 
-const deviceVariants = {
-  offscreen: {
-    y: 300,
- 
-  },
-  onscreen: {
-    y: 50,
-    rotate: -10,
-  
-    transition: {
-      type: "easeIn",
-      
-      duration: 2,
-    },
-   
-  }
-};
-
-
 
 const CardSection = () => {
-  const { scrollYProgress } = useScroll({
-    offset: ["start start", "end end"]
-  })
+
   return (
     <CardSectionStyled id="card">
       <InnerLayout>
@@ -67,16 +46,17 @@ const CardSection = () => {
               congested rush hour traffic.
             </span>
           </div>
-         
-         <motion.div className="card-center"
-      initial="offscreen"
-  whileInView="onscreen"
-  viewport={{ once: true }}
+
+         <div className="card-center">
+      <Fade down delay="500ms">
+
+
   >
-      <motion.div variant={deviceVariants}>
-        <img src={deviceHomeDual} alt="" className="device-home-dual" style={{ offsetY: scrollYProgress }}/>
-      </motion.div>
-          </motion.div>
+     
+        <img src={deviceHomeDual} alt="" className="device-home-dual" />
+  
+        </Fade>
+          </div>
           <div className="card-right">
             <div className="feature-list">
               {featureList.map((feature) => (
@@ -110,16 +90,8 @@ const CardSectionStyled = styled.section`
   margin: 0;
   padding: 0;
   position: relative;
-  @keyframes fadeInUp {
-    0% {
-      transform: translateY(20rem);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
+ 
+  
   .card-container {
     display: flex;
     flex-direction: row;
@@ -162,8 +134,7 @@ const CardSectionStyled = styled.section`
         position: absolute;
         top: 30vh;
         left: 35vw;
-        animation: fadeInUp 1.5s;
-        transition: 1.5s ease-in;
+      
       }
     }
     .card-left {

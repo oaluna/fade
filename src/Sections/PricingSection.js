@@ -3,6 +3,7 @@ import styled from "styled-components";
 import deviceGalaxyNote from "../assets/deviceGalaxyNote.png";
 import gradient from "../assets/gradient-bg3.png";
 import { InnerLayout } from "../styles/Layout";
+import Fade from "react-reveal/Fade"
 
 const PaymentSection = () => {
   return (
@@ -14,6 +15,7 @@ const PaymentSection = () => {
             No more bumping butts on buses.
           </h3>
           <div className="app-buttons">
+          <Fade left>
                 <img
                   src="https://miro.medium.com/max/600/1*nZu0dsnlCQltPT1QMCHFAA.png"
                   alt="google play"
@@ -24,10 +26,13 @@ const PaymentSection = () => {
                   alt="app store"
                   style={{ width: "40%", margin: "25px 15px" }}
                 />
+                </Fade>
                 </div>
         </div>
         <div className="card-con">
+        <Fade right>
          <img src={deviceGalaxyNote}  alt="" />
+         </Fade>
         </div>
       </InnerLayout>
     </PaymentStyled>

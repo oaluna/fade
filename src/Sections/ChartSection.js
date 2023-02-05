@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Fade from "react-reveal/Fade"
 import { InnerLayout } from "../styles/Layout";
 import gradient from "../assets/gradient-bg3.png";
 import iPhoneLarge from "../assets/iPhoneLarge.png";
@@ -52,11 +53,10 @@ const ChartSection = () => {
             </ul>
             <AnimatedButton text={"Learn More"} />
           </div>
-          <motion.div className="chart-right"
-      initial="offscreen"
-  whileInView="onscreen"
-  viewport={{ once: true }}
+          <div className="chart-right"
   >
+  <Fade right>
+
             <img src={iPhoneLarge} alt="" className="iphone-lg"/>
             <img src={iPhoneSmall} alt="" className="iphone-sm"/>
             {/* <Roll right>
@@ -68,7 +68,8 @@ const ChartSection = () => {
             {/* <Bounce right>
                      <AnimatedButton name={'Learn More'} />
                   </Bounce> */}
-          </motion.div>
+                  </Fade>
+          </div>
         </div>
       </InnerLayout>
     </ChartStyled>

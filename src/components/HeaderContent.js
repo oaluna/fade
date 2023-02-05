@@ -1,41 +1,33 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import { Animate } from "react-simple-animate";
 import SecondaryButton from "./SecondaryButton";
 import deviceFrames from "../assets/deviceFrames.png";
 import logo from "../assets/fade-logo.svg";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import Fade from "react-reveal/Fade"
 
 const HeaderContent = () => {
+
+
+
   return (
     <HeaderContentStyled>
       <div className="left-content">
-        <motion.div
-          animate={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 2, delay: 0.5 }}
-          className="box"
-        >
           <div className="left-text-container">
+       <Fade left>
             <img src={logo} alt="" />
             <p className="white">
               Save time and money spent on your daily commute.
             </p>
             <br />
             <SecondaryButton name="Learn More" />
+            </Fade>
           </div>
-        </motion.div>
       </div>
 
       <div className="right-content">
-        <motion.div
-          animate={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 2, delay: 0.5 }}
-        >
+       <Fade right>
           <img src={deviceFrames} alt="" className="phone" />
-        </motion.div>
+          </Fade>
       </div>
     </HeaderContentStyled>
   );
