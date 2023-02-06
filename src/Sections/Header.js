@@ -19,12 +19,9 @@ const Header = () => {
 const HeaderStyled = styled.header`
   height: 100vh;
   width: 100%;
-
-  background-image: url(${gradient});
-
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-y: 100%;
+position:relative;
+z-index: 0;
+ 
   .header-content {
     padding: 0 10rem;
 

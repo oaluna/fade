@@ -40,10 +40,7 @@ const CardSection = () => {
         <div className="card-container">
           <div className="card-left">
             <span>
-              Fade is a carpooling service that aims to reduce the time and
-              money you spend on your daily commute,by encouraging our users to
-              travel together. We aim to unburden you of long bus rides and
-              congested rush hour traffic.
+            Experience the ease of carpooling with Fade! Make getting to and from the office simpler and simpler than ever with our comprehensive carpooling solution. With Fade's convenient matching service, you can rely on reliable carpool partners for a smooth ride. Plus, our one-of-a-kind subscription offers guarantee a consistent connection with dependable carpoolers who understand the benefits of carpooling. Say goodbye to stressful travels and embrace hassle-free rides with Fade now!
             </span>
           </div>
 
@@ -124,6 +121,7 @@ const CardSectionStyled = styled.section`
         line-height: 28px;
         .list-item {
           padding: 2rem 0;
+        
         }
       }
     }
@@ -140,7 +138,7 @@ const CardSectionStyled = styled.section`
     .card-left {
       span {
         position: absolute;
-        top: 45vh;
+        top: 30vh;
         left: 10vw;
         width: 14rem;
         text-align: left;
@@ -148,8 +146,8 @@ const CardSectionStyled = styled.section`
         /* Text/Article */
 
         font-family: "Comfortaa", sans-serif;
-        font-size: 16px;
-        line-height: 28px;
+        font-size: 14px;
+        line-height: 25px;
       }
     }
   }

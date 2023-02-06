@@ -39,7 +39,8 @@ const NavigationStyled = styled.nav`
   align-items: center;
   padding-top: 15px;
   width: 100%;
-  z-index: 0;
+  z-index: 2;
+  position: relative;
  img: {
 width: 32px;
 height: 32px;

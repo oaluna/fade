@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
       font-family: 'Comfortaa', sans-serif;
       text-decoration: none;
-      overflow-x: hidden;
+    
    }
 
    body{
@@ -25,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
       color: white;
       font-size: 1.2rem;
       font-family: 'Comfortaa', sans-serif;
+      overflow-x: hidden;
+
    }
    a{
       color: inherit;
