@@ -18,32 +18,14 @@ const Header = () => {
 
 const HeaderStyled = styled.header`
   height: 100vh;
-  width: 100%;
-position:relative;
-z-index: 0;
+  width: 100vw;
+margin: 0;
+padding: 0
+z-index: 10;
  
   .header-content {
-    padding: 0 10rem;
-
-    @media screen and (max-width: 1347px) {
-      padding: 5rem 14rem;
-    }
-    @media screen and (max-width: 1186px) {
-      padding: 5rem 8rem;
-    }
-    @media screen and (max-width: 990px) {
-      padding: 5rem 4rem;
-    }
-    @media screen and (max-width: 768px) {
-      padding: 5rem 2rem;
-    }
-    @media screen and (max-width: 485px) {
-      padding: 4rem 1rem;
-    }
-    @media screen and (max-width: 350px) {
-      padding: 0;
-    }
-  }
+    padding: 0 14rem;
+	}
 `;
 
 export default Header;
