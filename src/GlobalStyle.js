@@ -5,27 +5,21 @@ const GlobalStyle = createGlobalStyle`
       --primary: #69C7F2;
       --seafoam: #4FC8B0;
       --neutral-light: #F2F6FF;
-      --green: #2F90B0; /*Primary Font Color*/
+      --green: #2F90B0; 
+/*Primary Font Color*/
       --dark-primary: #01000e;
       --border-colour: #CAD6F1;
    }
-   *{
-    max-width:100vw;
+   *, html, body {
+      width:100vw;
       margin: 0;
       padding: 0;
       list-style: none;
       box-sizing: border-box;
       font-family: 'Comfortaa', sans-serif;
       text-decoration: none;
-    
-   }
-
-   body{
-      background-color: var(--neutral-light);
-      color: white;
-      font-size: 1.2rem;
-      font-family: 'Comfortaa', sans-serif;
-      overflow-x: hidden;
+color: var(--neutral-light);
+background-color: var(--neutral-light);
 
    }
    a{
