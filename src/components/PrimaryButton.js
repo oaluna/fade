@@ -21,6 +21,11 @@ const ButtonStyled=styled.button`
    font-size: 1rem;
    font-family: inherit;
    cursor: pointer;
+   display: flex;
+   flex-direction: column;
+   z-index: 5;
+   position: relative;
+   
 
 `
 

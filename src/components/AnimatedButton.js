@@ -29,7 +29,14 @@ const AnimatedButtonStyled = styled.button`
    img{
       margin-left: 1rem;
       padding-left: inherit.9rem;
+     
    }
+      @media screen and (max-width: 540px) {
+      margin-left: 10rem;
+      align-items: flex-end;
+      justify-content: space-evenly;
+      z-index: 10;
+      }
 `
 
 export default AnimatedButton

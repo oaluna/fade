@@ -40,26 +40,23 @@ const CardSection = () => {
         <div className="card-container">
           <div className="card-left">
             <span>
-            Experience the ease of carpooling with Fade! Make getting to and from the office simpler and simpler than ever with our comprehensive carpooling solution. With Fade's convenient matching service, you can rely on reliable carpool partners for a smooth ride. Plus, our one-of-a-kind subscription offers guarantee a consistent connection with dependable carpoolers who understand the benefits of carpooling. Say goodbye to stressful travels and embrace hassle-free rides with Fade now!
+              Experience the ease of carpooling with Fade! Make getting to and from the office simpler and simpler than ever with our comprehensive carpooling solution. With Fade's convenient matching service, you can rely on reliable carpool partners for a smooth ride. Plus, our one-of-a-kind subscription offers guarantee a consistent connection with dependable carpoolers who understand the benefits of carpooling. Say goodbye to stressful travels and embrace hassle-free rides with Fade now!
             </span>
           </div>
 
-         <div className="card-center">
-      <Fade down delay="500ms">
+          <div className="card-center">
+            <Fade down delay="500ms">
 
+              <img src={deviceHomeDual} alt="" className="device-home-dual" />
 
-  >
-     
-        <img src={deviceHomeDual} alt="" className="device-home-dual" />
-  
-        </Fade>
+            </Fade>
           </div>
           <div className="card-right">
             <div className="feature-list">
               {featureList.map((feature) => (
                 <>
                   <div className="list-item" key={feature.id}>
-                    <span className="list-item-header">
+                    <span className="list-item-header" style={{ lineHeight: '24px' }}>
                       <h3>{feature.header}</h3>
                     </span>
                     <span className="list-item-body">
@@ -80,47 +77,57 @@ const CardSection = () => {
 // `
 
 const CardSectionStyled = styled.section`
+  display: flex;
   width: 100vw;
   height: 140vh;
   text-align: center;
-
   margin: 0;
   padding: 0;
   position: relative;
- 
-  
+    @media screen and (min-width: 350px) {
+      flex-direction:row;
+    }
   .card-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 100%;
-
-    @media screen and (max-width: 845px) {
-      flex-direction: column;
+    
+    @media screen and (max-width: 540px) {
+      left: 0rem;
+      width: 100%;
     }
+  .card-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    @media screen and (max-width: 540px) {
+      justify-content: flex-start;
+      position: relative;
+      width: 100%;
+    }
+    .feature-list {
+      width: 20vw;
+      position: absolute;
+      top: 25vh;
+      right: 12vw;
+      line-height: 16px;
+      text-align: left;
+      justify-content: space-evenly;
+      font-family: "Comfortaa", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      @media screen and (max-width: 540px) {
+        left: 0vw;
+        top: 15vh;
+        width: 100%;
+       
+      }
 
-    .card-right {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      .feature-list {
-        width: 20vw;
-        position: absolute;
-        top: 25vh;
-        right: 12vw;
-
-        text-align: left;
-        justify-content: space-between;
-
-        /* Text/Article */
-
-        font-family: "Comfortaa", sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 28px;
-        .list-item {
-          padding: 2rem 0;
+      .list-item {
+          padding: 1rem 0;
         
         }
       }
@@ -130,9 +137,14 @@ const CardSectionStyled = styled.section`
         height: 100vh;
         max-width: 100vw;
         position: absolute;
-        top: 30vh;
+        top: 31vh;
         left: 35vw;
-      
+        @media screen and (max-width: 540px) {
+          width: 100%;
+          height: auto;
+          top: 40vh;
+          left: 20vw;
+        }
       }
     }
     .card-left {
@@ -142,12 +154,18 @@ const CardSectionStyled = styled.section`
         left: 10vw;
         width: 14rem;
         text-align: left;
-
-        /* Text/Article */
-
         font-family: "Comfortaa", sans-serif;
         font-size: 14px;
         line-height: 25px;
+        @media screen and (min-width: 350px) {
+          max-width: 100%;
+          width: inherit;
+          z-index: 2;
+          top: 8rem;
+          line-height: 20px;
+           padding-right: 5vw;
+           padding-bottom: 10vh;
+        }
       }
     }
   }
@@ -159,6 +177,7 @@ const CardSectionStyled = styled.section`
       justify-content: center;
       width: 100vw;
       height: auto;
+      margin-top: -5rem;
       margin-left: -5rem;
     }
   }

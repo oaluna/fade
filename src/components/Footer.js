@@ -42,7 +42,7 @@ const FooterStyled = styled.footer`
   justify-content: space-evenly;
   width: 100vw;
   margin-top: -5vh;
-  overflow-y: hidden;
+  overflow: hidden;
   z-index: 1;
 
   @media screen and (max-width: 1347px) {

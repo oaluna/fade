@@ -14,7 +14,6 @@ flex-direction: row;
 justify-content: center;
 align-items: center;
 padding: 30px 115px;
-gap: 868px;
 
 position: relative;
 width: 1400px;
@@ -32,9 +31,9 @@ const Menu = styled.div`
   align-items: flex-start;
 `;
 const Link = styled.p`
-  width: 12.22%;
+  max-width: 100%;
   font-family: "Comfortaa";
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 10px;
   color: ${props => props.theme.colors.primary};
@@ -42,9 +41,9 @@ const Link = styled.p`
   margin-right: 42px;
 `;
 const Link2 = styled.p`
-  width: 16.67%;
+ max-width: 100%;
   font-family: "Comfortaa";
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 10px;
   color: ${props => props.theme.colors.primary};

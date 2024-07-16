@@ -114,8 +114,7 @@ const MessageStyle = styled.section`
       width: 50%;
 left: 51.07%;
 right: 8.21%;
-
-
+top: 5rem;
       h2 {
          width: 100%;
          color: var(--dark-primary);
@@ -146,7 +145,7 @@ right: 8.21%;
         max-width: 100%:
         height: 400px;
         padding: 15px;
-        margin: 0 15px 0 0;
+        margin: -5rem 15px 0 0;
         background: #fff;
 border-radius: 45px;
 box-shadow: 0px 0.5px 2px rgba(0,0,0,0.2);

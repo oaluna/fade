@@ -24,6 +24,10 @@ const SecondaryButtonStyled = styled.button`
    display: flex;
    align-items: center;
    justify-content: space-around;
+   @media screen and (min-width: 350px) {
+    position: relative;
+    z-index: 3;
+  }
    
    span{
       margin-right: 10px;

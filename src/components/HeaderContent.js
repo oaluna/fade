@@ -107,7 +107,6 @@ import styled from "styled-components";
 import gradient from "../assets/gradient-bg3.png";
 import SecondaryButton from "./SecondaryButton";
 import deviceFrames from "../assets/deviceFrames.png";
-import logo from "../assets/fade-logo.svg";
 import Roll from "react-reveal/Roll";
 import { InnerLayout } from "../styles/Layout";
 import Fade from "react-reveal/Fade";
@@ -118,14 +117,17 @@ const HeaderContent = () => {
       <InnerLayout>
         <div data-aos="fade-down-right" className="left-header">
         <Fade left>
-          <img src={logo} alt="" className="logo" />
+          <img src="https://res.cloudinary.com/dgdnpkfun/image/upload/v1721064322/df9d91c245e30fcb56fad9e20d424ebc_dw3tds.png" alt="" className="logo" />
+          <h1 style={{color: '#15f6f2', letterSpacing: '16.75px', zIndex: 2}}>BAY AREA CARPOOLING</h1>
           <h2 className="header-text">
             Beat traffic with <span className="green">Fade</span> - Reduce
             commute time and traffic congestion, save money, and grow your
             network by carpooling in the Bay Area.
           </h2>
         <br />
-        <SecondaryButton name="Learn More" /> 
+          <div style={{zIndex: 2}}>
+        <SecondaryButton name="Learn More"/> 
+        </div>
         </Fade>
         </div>
         <div className="right-header">
@@ -139,32 +141,36 @@ const HeaderContent = () => {
 };
 
 const HeaderStyled = styled.section`
-  background-image: url(${gradient});
-  background-size: cover;
-  mix-blend-mode: blur(10px);
+  
+  
   height: 100vh;
   width: 100vw;
   overflow-y: hidden;
   position: relative;
-  margin-top: -8vh;
-  margin-left: -11vw;
+  
   z-index: 0;
   display: flex;
     overflow-x:hidden;
   flex-direction: row;
   align-items: center;
+
   .right-header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 3rem;
   
-    z-index: 0;
+   
+
     img {
- position:absolute;
+position:absolute;
  top: 20%;
  left: 65%;
  height: 80%;
-      z-index: 0;
+ @media screen and (min-width: 350px) {
+  z-index: 0;
+  left: 0;
+  opacity: 0.75;
+  }
     }
     .app-buttons {
       display: flex;
@@ -182,7 +188,11 @@ const HeaderStyled = styled.section`
     align-items: flex-start;
     padding-left: 6rem;
     width: 45%;
-    z-index: 1;
+    z-index: 5;
+     @media screen and (min-width: 350px) {
+    padding-left: 0rem;
+    
+  }
     .header-text {
       text-align: left;
       color: var(--neutral-light);
@@ -200,6 +210,7 @@ const HeaderStyled = styled.section`
     img {
       z-index: 1;
       max-width: 100%;
+    
     }
   }
   .share {

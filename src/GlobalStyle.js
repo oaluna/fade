@@ -10,16 +10,19 @@ const GlobalStyle = createGlobalStyle`
       --dark-primary: #01000e;
       --border-colour: #CAD6F1;
    }
-   *, html, body {
+    html, body {
       width:100vw;
+      min-height:100vh;
       margin: 0;
       padding: 0;
       list-style: none;
       box-sizing: border-box;
       font-family: 'Comfortaa', sans-serif;
       text-decoration: none;
-color: var(--neutral-light);
-background-color: var(--neutral-light);
+      color: var(--neutral-light);
+      background-color: var(--neutral-light);
+      
+      overflow-x: hidden;
 
    }
    a{

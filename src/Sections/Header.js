@@ -8,8 +8,8 @@ import gradient from "../assets/gradient-bg3.png";
 const Header = () => {
   return (
     <HeaderStyled id="header">
-      <div className="header-content">
         <Navigation />
+      <div className="header-content">
         <HeaderContent />
       </div>
     </HeaderStyled>
@@ -17,15 +17,18 @@ const Header = () => {
 };
 
 const HeaderStyled = styled.header`
-  height: 100vh;
-  width: 100vw;
+ background-image: url(${gradient}); 
+ background-size: cover;
+ background-repeat:no-repeat;
+ 
 margin: 0;
 padding: 0
 z-index: 10;
  
   .header-content {
-    padding: 0 14rem;
+    padding: 0;
 	}
+ 
 `;
 
 export default Header;

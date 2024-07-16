@@ -51,10 +51,9 @@ const ChartSection = () => {
                 </span>
               ))}
             </ul>
-            <AnimatedButton text={"Learn More"} />
+            <AnimatedButton text={"Learn More"}/>
           </div>
-          <div className="chart-right"
-  >
+          <div className="chart-right">
   <Fade right>
 
             <img src={iPhoneLarge} alt="" className="iphone-lg"/>
@@ -98,6 +97,8 @@ const ChartStyled = styled.section`
     .chart-left {
       width: 75%;
       margin-left: 6rem;
+      margin-top: -5rem;
+      z-index: 10;
       h2 {
         text-align: left;
         color: var(--neutral-light);
@@ -105,6 +106,10 @@ const ChartStyled = styled.section`
       p {
         color: var(--border);
       }
+        @media screen and (max-width: 540px) {
+        max-width: 100%;
+        margin-left: 0rem;
+        }
       @media screen and (max-width: 1347px) {
         width: 100%;
       }
@@ -114,21 +119,55 @@ const ChartStyled = styled.section`
         flex-direction: column;
         align-items: flex-start;
         justify-content: space-between;
-        height: 20vh;
+        height: 30vh;
         margin-top: 5vh;
+        @media screen and (max-width: 540px) {
+          margin-left: -2rem;
+        
+        }
       }
       .chart-left-step {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        @media screen and (max-width: 540px) {
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+          text-align:left;
+            line-height: 20px;
+          height: 20vh;
+         
+          max-width: 50%;
+          }
         h6 {
           color: var(--primary);
+          width: 40px;
+          height: 40px;
+          background: linear-gradient(270deg, #01000e 0%, #170a40 100%);
+          padding: 5px; 
+          display: flex; 
+          flex-direction:column; 
+          align-items: center;
+          justify-content: space-evenly; 
+          border-radius: 8%; 
+          box-shadow: 1.8px 1.4px 4px rgba(0,0,0,11%);
+          @media screen and (max-width: 540px) {
+      left: 0rem;
+   
+            
+            
+          }
         }
         p {
           color: var(--neutral-light);
           font-size: 16px;
+          line-height: 20px;
           margin-left: 25px;
+          @media screen and (max-width: 540px) {
+          margin-left: 0px;
+          }
         }
       }
 
@@ -159,6 +198,12 @@ const ChartStyled = styled.section`
         flex-direction: row;
         align-items: flex-end;
         justify-content:space-evenly;
+         @media screen and (max-width: 540px) {
+         &img.iphone-sm {
+         
+         z-index: 0;
+}
+      }
       }
        img.iphone-sm {
          left: 14vw;
